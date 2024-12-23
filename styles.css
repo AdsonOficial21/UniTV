@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 180px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 50px;
+    font-size: 3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    border-radius: 3px;
+}
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+.download-item {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.download-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.download-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.download-item:hover::before {
+    transform: scaleX(1);
+}
+
+.download-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 25px;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+
+.download-item:hover img {
+    transform: scale(1.08);
+}
+
+.download-item h3 {
+    color: #1a237e;
+    margin: 15px 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.download-btn {
+    background: linear-gradient(45deg, #3f51b5, #5c6bc0);
+    color: white;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    box-shadow: 0 8px 20px rgba(63,81,181,0.25);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.download-btn:hover::before {
+    left: 100%;
+}
+
+.download-btn:hover {
+    background: linear-gradient(45deg, #5c6bc0, #3f51b5);
+    box-shadow: 0 12px 25px rgba(63,81,181,0.35);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+    .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .logo {
+        width: 150px;
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .download-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .download-item {
+        padding: 12px;
+        margin-bottom: 0;
+    }
+    
+    h1 {
+        font-size: 15px;
+        margin-bottom: 20px;
+        padding-top: 30px;
+    }
+    
+    .container {
+        padding: 10px 5px;
+    }
+    
+    .logo {
+        width: 100px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        left: auto;
+        top: auto;
+    }
+
+    .download-item img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .download-item h3 {
+        font-size: 1em;
+        margin: 8px 0;
+    }
+
+    .download-btn {
+        padding: 8px 20px;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
+
+    .download-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
